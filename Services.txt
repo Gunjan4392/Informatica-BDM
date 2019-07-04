@@ -1,0 +1,40 @@
+****BDM Clients:****
+  1.  Informatica Developer 
+  2.  Informatica Administrator 
+  3.  Informatica Analyst
+  4.  infacmd
+
+****BDM Services:****
+  1.  Analyst Service [Optional]
+  2.  Content Management Service [Optional]
+  3.  Data Integration Service [Required]
+  4.  Model Repository Service [Required]
+  
+****The Model Repository Service manages metadata about:****
+  1.  Mappings
+  2.  Workflows
+  3.  Applications
+
+ Each time you open the Developer tool, you connect to the Model repository to access projects and folders.
+
+From the Model Repository Service repo
+
+  Lists all the mappings and mapplets available in the Model Repository service.
+    SELECT * FROM MRX_MAPPINGS
+
+  MRX_OBJECT_SUMMARY that has information about all objects in the MRS
+    SELECT * FROM MRX_OBJECT_SUMMARY WHERE object_typename LIKE '%MappingImp%';
+    
+    
+****The Data Integration Service is an application service that performs data integration jobs for
+    1.  Analyst tool
+    2.  Developer tool 
+    3.  External clients.
+    
+  The Data Integration Service runs:
+    1.  Mappings
+    2.  Workflows
+
+  The Data Integration Service:
+    1.  Determine the best engine to run the mapping.
+    2.  Will then push mapping and profiling jobs to the engine.
